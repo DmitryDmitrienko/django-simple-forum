@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block contennt %}
+    <div class="well well-small">
+        <p>{{ post.creates }}<h2>{{ post.title }}</h2></p>
+        <p>{{ post.body }}</p>
+    </div>
+    <hr>
+    {% for comment in post.comments.all %}
+        <div class="media">
+            <img class="media-object pull-left img-rounded" height="48" width="48" src="{{ comment.pic.url }}">
+            <div class="media-body">
+                <h4 class="media-heading">{{ comment.author }}</h4>
+                <div class="media">
+                    {{ comment.body }}
+                </div>
+          </div>
+        </div>
+    {% endfor %}
+    <form action="{% url 'createcomment' post.id %}" method="post" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+        <legend style="margin-top: 3%">{% trans 'Create comment' %}</legend>
+        {% include "input_field.html" with f=form.author %}
+        {% include "input_field.html" with f=form.body %}
+        {% include "input_field.html" with f=form.pic %}
+        <div class="form-actions">
+            <input class="btn btn-primary" id="button-accept-change-student" type="submit"
+                             value="{% trans "Save change" %}" name="save-comment">
+        </div>
+    </form>
+{% endblock %}

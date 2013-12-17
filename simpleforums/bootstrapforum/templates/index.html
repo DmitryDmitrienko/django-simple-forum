@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block contennt %}
+    {% for post in posts %}
+      <li><a href="{% url 'post' post.id %}">{{ post }}</a></li>
+    {% endfor %}
+{% endblock %}

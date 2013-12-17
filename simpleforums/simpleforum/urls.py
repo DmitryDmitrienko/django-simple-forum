@@ -1,0 +1,29 @@
+from django.conf.urls import patterns, include, url
+from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
+
+from bootstrapforum.views.view import *
+
+from .settings import local as settings
+
+
+admin.autodiscover()
+
+urlpatterns = patterns('',
+                       (r'^i18n/', include('django.conf.urls.i18n')),
+                       # Uncomment the admin/doc line below to enable admin documentation:
+                       # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+                       url(r'^setlanguage$', 'bootstrapforum.views.view.change_language', name='language'),
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^(?P<post_id>\d+)/createcomment$', CreateComment.as_view(), name='createcomment'),
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += i18n_patterns('',
+                             url(r'^$', PostListView.as_view(), name='index'),
+                             url(r'^(?P<post_id>\d+)$', PostView.as_view(), name='post'),
+
+)
+
+urlpatterns += staticfiles_urlpatterns()
