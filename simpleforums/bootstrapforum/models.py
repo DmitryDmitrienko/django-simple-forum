@@ -1,5 +1,17 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import AbstractUser
+from simpleforum.settings.local import LANGUAGES
+
+
+class UserForum(AbstractUser):
+    language = models.CharField(max_length=40, choices=LANGUAGES, default=LANGUAGES[0][1],
+                                verbose_name=_('language user'))
+    avatar = models.ImageField(upload_to='profile/avatar/%Y/%m/%d/', blank=False, null=True,
+                               verbose_name=_("avatar user"), default='profile/user.png')
+
+    # class Meta:
+    #     swappable = 'CUSTOM_USER_MODEL'
 
 
 class Post(models.Model):

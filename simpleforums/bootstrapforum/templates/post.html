@@ -3,6 +3,7 @@
 {% load i18n %}
 {% block contennt %}
     <div class="well well-small">
+        <p><img class="pull-left img-rounded" height="48" width="48" src="{{ user.avatar.url }}"></p>
         <p>{{ post.creates }}<h2>{{ post.title }}</h2></p>
         <p>{{ post.body }}</p>
     </div>
