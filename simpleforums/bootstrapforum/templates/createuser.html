@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block contennt %}
-    <form class="form-horizontal" action="{% url "login" %}" method="post"> {% csrf_token %}
+    <form class="form-horizontal" action="{% url "createuser" %}" method="post"> {% csrf_token %}
             {% if form.errors and '__all__' in form.errors %}
                 <ul class="unstyled">
                     {% for e in form.errors.values %}
@@ -11,12 +11,12 @@
                 </ul>
             {% endif %}
             {% include 'input_field.html' with f=form.username %}
-            {% include 'input_field.html' with f=form.password %}
+            {% include 'input_field.html' with f=form.password1 %}
+            {% include 'input_field.html' with f=form.password2 %}
             <div class="control-group">
                 <div class="controls">
-                    <button type="submit" class="btn btn-primary">{% trans "Enter" %}</button>
+                    <button type="submit" class="btn btn-primary">{% trans "create user" %}</button>
                 </div>
             </div>
-            <a href="{% url "createuser" %}">{% trans "create new user" %}</a>
     </form>
 {% endblock %}

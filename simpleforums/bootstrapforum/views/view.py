@@ -5,9 +5,10 @@ from django.views.generic.edit import CreateView, FormView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.views import logout_then_login, auth_login
 from django.shortcuts import redirect
+from django.contrib.auth.models import Group
 
 from simpleforums.bootstrapforum.models import Post, Comment
 from simpleforums.bootstrapforum.forms import CommentForm
@@ -77,6 +78,7 @@ def change_language(request):
 class AuthenticateView(FormView):
     form_class = AuthenticationForm
     template_name = "authenticate.html"
+    http_method_names = ('post', 'get', )
 
     def get_success_url(self):
         return reverse('index')
@@ -91,3 +93,26 @@ class AuthenticateView(FormView):
 
 def logout(request):
     return logout_then_login(request, login_url='/login')
+
+
+class CreateUserView(CreateView):
+    form_class = UserCreationForm
+    template_name = "createuser.html"
+    http_method_names = ('get', 'post')
+
+    def get_success_url(self):
+        return reverse('index')
+
+    def form_valid(self, form):
+        u = form.save()
+        if u:
+            g = Group.objects.get(name='Users')
+            g.user_set.add(u)
+            g.save()
+            u.backend = 'django.contrib.auth.backends.ModelBackend'
+            auth_login(self.request, u)
+            return HttpResponseRedirect(self.get_success_url())
+        else:
+            HttpResponseRedirect(reverse('login'))
+
+
