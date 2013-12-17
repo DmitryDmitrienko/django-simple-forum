@@ -8,7 +8,7 @@ ugettext = lambda s: s
 ADMINS = (
 # ('Your Name', 'your_email@example.com'),
 )
-
+AUTH_USER_MODEL = "bootstrapforum.UserForum"
 PROJECT_ROOT = os.path.dirname(__file__) + "/../"
 
 MANAGERS = ADMINS
