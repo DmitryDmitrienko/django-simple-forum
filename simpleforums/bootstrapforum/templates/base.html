@@ -18,8 +18,8 @@
 <body>
 <div class="container" id="main-conteiter">
     <div class="page-header">
-        <h1>{% trans "Simple forum" %}
-            <small class="pull-right"> {{ user.first_name }}&nbsp;{{ user.last_name }}
+        <h1><a href="/">{% trans "Simple forum" %}</a> 
+            <small class="pull-right"> {{ user.username }}
                 <a href="{% url 'logout' %}">{% trans "Exit" %}</a>
             </small>
         </h1>
