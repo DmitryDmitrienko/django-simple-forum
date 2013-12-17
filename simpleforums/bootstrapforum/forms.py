@@ -1,7 +1,6 @@
 #coding=utf-8
 __author__ = 'dmitriydmitrienko'
 from django import forms
-
 from .models import Post, Comment
 
 

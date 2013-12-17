@@ -1,10 +1,13 @@
 #coding=utf-8
 
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, FormView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.views import logout_then_login, auth_login
+from django.shortcuts import redirect
 
 from simpleforums.bootstrapforum.models import Post, Comment
 from simpleforums.bootstrapforum.forms import CommentForm
@@ -69,3 +72,22 @@ def change_language(request):
         r = r.replace('/en/', '/ru/')
     set_language(request)
     return HttpResponseRedirect(r)
+
+
+class AuthenticateView(FormView):
+    form_class = AuthenticationForm
+    template_name = "authenticate.html"
+
+    def get_success_url(self):
+        return reverse('index')
+
+    def form_valid(self, form):
+        auth_login(self.request, form.get_user())
+        if self.request.GET:
+            return redirect(self.request.GET['next'])
+        else:
+            return super(AuthenticateView, self).form_valid(form)
+
+
+def logout(request):
+    return logout_then_login(request, login_url='/login')

@@ -3,9 +3,9 @@
 {% load i18n %}
 <html>
 <head>
-    <script type="text/javascript" src="{% static 'bootstrap/js/jquery.js'%}"></script>
-    <link href="{% static 'bootstrap/css/bootstrap.css'%}" rel="stylesheet">
-    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js'%}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/jquery.js' %}"></script>
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
     <style type="text/css">
         #main-conteiter {
             padding-top: 0%;
@@ -17,24 +17,29 @@
 </head>
 <body>
 <div class="container" id="main-conteiter">
-<div class="page-header">
-  <h1>{% trans "Simple forum" %}<small> by Dmitry Dmitrienko</small></h1>
-</div>
-<form action="{% url 'language' %}" method="post">{% csrf_token %}
-    <select name="language">
-        {% get_language_info_list for LANGUAGES as languages %}
-        {% for language in languages %}
-        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-            {{ language.name_local }} ({{ language.code }})
-        </option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="{% trans "Change language" %}" />
-</form>
+    <div class="page-header">
+        <h1>{% trans "Simple forum" %}
+            <small class="pull-right"> {{ user.first_name }}&nbsp;{{ user.last_name }}
+                <a href="{% url 'logout' %}">{% trans "Exit" %}</a>
+            </small>
+        </h1>
+    </div>
+    <form action="{% url 'language' %}" method="post">{% csrf_token %}
+        <select name="language">
+            {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                        selected="selected"{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="{% trans "Change language" %}"/>
+    </form>
 
-{% block contennt %}
+    {% block contennt %}
 
-{% endblock %}
+    {% endblock %}
 </div>
 
 </body>
