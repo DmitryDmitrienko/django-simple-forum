@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import AbstractUser
+from django.shortcuts import redirect
 from simpleforum.settings.local import LANGUAGES
 
 
@@ -12,6 +13,7 @@ class UserForum(AbstractUser):
 
 
 class Post(models.Model):
+    author = models.ForeignKey(UserForum, verbose_name=_("author post"))
     title = models.CharField(max_length=60, verbose_name=_('title post'), help_text=_('title post'))
     body = models.TextField(verbose_name=_('body post'), help_text=_('body of the post'))
     creates = models.DateTimeField(auto_now_add=True)
@@ -26,7 +28,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    author = models.ForeignKey(UserForum, verbose_name=_("author post"))
+    author = models.ForeignKey(UserForum, verbose_name=_("author comment"))
     created = models.DateTimeField(auto_now_add=True)
     body = models.TextField(verbose_name=_('body comment'), help_text=_('body of the comment'))
     post = models.ForeignKey(Post, related_name='comments')

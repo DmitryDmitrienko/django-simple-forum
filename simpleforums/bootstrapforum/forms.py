@@ -8,7 +8,7 @@ from .models import Post, Comment, UserForum
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ('creates', )
+        exclude = ('creates', 'author')
 
 
 class CommentForm(forms.ModelForm):

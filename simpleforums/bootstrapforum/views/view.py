@@ -11,7 +11,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.models import Group
 
 from simpleforums.bootstrapforum.models import Post, Comment, UserForum
-from simpleforums.bootstrapforum.forms import CommentForm
+from simpleforums.bootstrapforum.forms import CommentForm, PostForm
 
 
 class PostListView(ListView):
@@ -19,6 +19,19 @@ class PostListView(ListView):
     http_method_names = ('get', )
     model = Post
     context_object_name = 'posts'
+
+    def get_context_data(self, **kwargs):
+        context = super(PostListView, self).get_context_data(**kwargs)
+        try:
+            group, created = Group.objects.get_or_create(name="Admin")
+            #TODO: придумать что-то получше для определения принадлежности группе
+            is_admin = self.request.user in group.user_set.all()
+        except Exception as e:
+            is_admin = False
+        context.update(dict(
+            is_admin=is_admin
+        ))
+        return context
 
 
 class PostView(DetailView):
@@ -129,3 +142,22 @@ class CabinetView(DetailView):
 class CreatePostView(CreateView):
     template_name = "createpost.html"
     model = Post
+    form_class = PostForm
+
+    def get_success_url(self):
+        if self.object:
+            return self.object
+        else:
+            return reverse('createpost')
+
+
+    def form_valid(self, form):
+        user = self.request.user
+        if user.is_authenticated():
+            self.object = self.model(
+                author=user,
+                **form.cleaned_data
+            )
+            self.object.save()
+        return redirect(self.get_success_url())
+
