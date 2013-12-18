@@ -7,9 +7,12 @@
         <li>
             <a href="{% url 'post' post.id %}">{{ post }}</a>
             {% if is_admin or user == post.author %}
-                <a href="#" class="btn">{% trans "Change post" %}</a>
-                <a href="#" class="btn btn-danger">{% trans "Delete post" %}</a>
+
+                <a href="{% url "updatepost" post.id %}" class="btn">{% trans "Change post" %}</a>
+                <a href="{% url "deletepost" post.id %}"
+                   class="btn btn-danger">{% trans "Delete post" %}</a>
             {% endif %}
         </li>
+
     {% endfor %}
 {% endblock %}
