@@ -4,7 +4,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.auth.decorators import login_required
-from bootstrapforum.views.view import CreateComment, PostListView, PostView, AuthenticateView, CreateUserView
+from bootstrapforum.views.view import CreateComment, PostListView, PostView, AuthenticateView, CreateUserView, CabinetView
 
 from .settings import local as settings
 
@@ -17,17 +17,18 @@ urlpatterns = patterns('',
                        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        url(r'^setlanguage$', 'bootstrapforum.views.view.change_language', name='language'),
                        url(r'^admin/', include(admin.site.urls)),
-                       url(r'^(?P<post_id>\d+)/createcomment$', login_required(CreateComment.as_view()), name='createcomment'),
+                       url(r'^(?P<post_id>\d+)/createcomment$', login_required(CreateComment.as_view()),
+                           name='createcomment'),
                        url(r'^login$', AuthenticateView.as_view(), name='login'),
-                       url(r'^logout$', 'bootstrapforum.views.view.logout',  name='logout'),
-                       url(r'^createuser$', CreateUserView.as_view() , name='createuser'),
+                       url(r'^logout$', 'bootstrapforum.views.view.logout', name='logout'),
+                       url(r'^createuser$', CreateUserView.as_view(), name='createuser'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns('',
                              url(r'^$', login_required(PostListView.as_view()), name='index'),
                              url(r'^(?P<post_id>\d+)$', login_required(PostView.as_view()), name='post'),
-
+                             url(r'^user/(?P<user_id>\d+)$', login_required(CabinetView.as_view()), name='userview'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

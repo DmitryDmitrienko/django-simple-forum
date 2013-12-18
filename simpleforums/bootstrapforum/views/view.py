@@ -10,7 +10,7 @@ from django.contrib.auth.views import logout_then_login, auth_login
 from django.shortcuts import redirect
 from django.contrib.auth.models import Group
 
-from simpleforums.bootstrapforum.models import Post, Comment
+from simpleforums.bootstrapforum.models import Post, Comment, UserForum
 from simpleforums.bootstrapforum.forms import CommentForm
 
 
@@ -114,5 +114,13 @@ class CreateUserView(CreateView):
             return HttpResponseRedirect(self.get_success_url())
         else:
             HttpResponseRedirect(reverse('login'))
+
+
+class CabinetView(DetailView):
+    template_name = "user.html"
+    model = UserForum
+    http_method_names = ('get',)
+    pk_url_kwarg = "user_id"
+    context_object_name = "user_forum"
 
 

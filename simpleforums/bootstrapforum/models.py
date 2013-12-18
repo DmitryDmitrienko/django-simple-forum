@@ -10,8 +10,7 @@ class UserForum(AbstractUser):
     avatar = models.ImageField(upload_to='profile/avatar/%Y/%m/%d/', blank=False, null=True,
                                verbose_name=_("avatar user"), default='profile/user.png')
 
-    # class Meta:
-    #     swappable = 'CUSTOM_USER_MODEL'
+
 
 
 class Post(models.Model):
