@@ -31,8 +31,10 @@ urlpatterns += i18n_patterns('',
                              url(r'^(?P<post_id>\d+)$', login_required(PostView.as_view()), name='post'),
                              url(r'^user/(?P<user_id>\d+)$', login_required(CabinetView.as_view()), name='userview'),
                              url(r'^createpost$', login_required(CreatePostView.as_view()), name='createpost'),
-                             url(r'^deletepost/(?P<post_id>\d+)', login_required(DeletePostView.as_view()), name='deletepost'),
-                             url(r'^updatepost/(?P<post_id>\d+)', login_required(UpdatePostView.as_view()), name='updatepost'),
+                             url(r'^deletepost/(?P<post_id>\d+)', login_required(DeletePostView.as_view()),
+                                 name='deletepost'),
+                             url(r'^updatepost/(?P<post_id>\d+)', login_required(UpdatePostView.as_view()),
+                                 name='updatepost'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

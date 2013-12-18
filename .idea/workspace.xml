@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f76351c-cdb4-4623-8261-4c535e76b1f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/jquery.js" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/simpleforum/settings/local.py" afterPath="$PROJECT_DIR$/simpleforums/simpleforum/settings/local.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/models.py" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" afterPath="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/simpleforum/wsgi.py" afterPath="$PROJECT_DIR$/simpleforums/simpleforum/wsgi.py" />
     </list>
     <ignored path="django-simple-forum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,28 +37,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="view.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="view.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="1.8577406" vertical-offset="1684" max-vertical-offset="4080">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Library/Python/2.7/site-packages/django/views/generic/edit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="209" column="6" selection-start="6640" selection-end="6640" vertical-scroll-proportion="0.0" vertical-offset="4180" max-vertical-offset="5580">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="deletepost.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="14" selection-start="685" selection-end="685" vertical-scroll-proportion="-9.655172" vertical-offset="0" max-vertical-offset="440">
+            <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
               <folding />
             </state>
           </provider>
@@ -61,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="64" selection-start="393" selection-end="393" vertical-scroll-proportion="-6.8965516" vertical-offset="0" max-vertical-offset="480">
+            <state line="21" column="64" selection-start="867" selection-end="867" vertical-scroll-proportion="0.45307443" vertical-offset="0" max-vertical-offset="927">
               <folding />
             </state>
           </provider>
@@ -73,7 +67,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="6" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="760">
+            <state line="13" column="6" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="760">
               <folding />
             </state>
           </provider>
@@ -82,7 +76,7 @@
       <file leaf-file-name="post.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="73" selection-start="617" selection-end="617" vertical-scroll-proportion="-11.724138" vertical-offset="0" max-vertical-offset="860">
+            <state line="5" column="36" selection-start="143" selection-end="151" vertical-scroll-proportion="-3.4482758" vertical-offset="0" max-vertical-offset="860">
               <folding />
             </state>
           </provider>
@@ -100,7 +94,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="77" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="880">
+            <state line="31" column="77" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="920">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -146,11 +140,11 @@
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/createuser.html" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/models.py" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/forms.py" />
-        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" />
-        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" />
         <option value="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/updatepost.html" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
+        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" />
+        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" />
       </list>
     </option>
   </component>
@@ -389,6 +383,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-simple-forum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-simple-forum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="simpleforums" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrapforum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -788,13 +816,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///Library/Python/2.7/site-packages/django/db/models/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="322" column="6" selection-start="14197" selection-end="14197" vertical-scroll-proportion="-3.641357" vertical-offset="8154" max-vertical-offset="19740">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/programming/django1.6/lib/python2.7/site-packages/django/db/models/manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="249" column="0" selection-start="9113" selection-end="9113" vertical-scroll-proportion="0.0" vertical-offset="4690" max-vertical-offset="5660" />
@@ -842,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="73" selection-start="617" selection-end="617" vertical-scroll-proportion="-11.724138" vertical-offset="0" max-vertical-offset="860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="77" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="880">
@@ -858,16 +872,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="64" selection-start="393" selection-end="393" vertical-scroll-proportion="-6.8965516" vertical-offset="0" max-vertical-offset="480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="6" selection-start="604" selection-end="604" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="840">
+        <state line="13" column="6" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="760">
           <folding />
         </state>
       </provider>
@@ -879,13 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="685" selection-end="685" vertical-scroll-proportion="-9.655172" vertical-offset="0" max-vertical-offset="440">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/updatepost.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="49" selection-start="345" selection-end="345" vertical-scroll-proportion="-4.827586" vertical-offset="0" max-vertical-offset="400">
@@ -893,9 +893,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-22.099682" vertical-offset="20840" max-vertical-offset="187900">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="14" selection-start="686" selection-end="686" vertical-scroll-proportion="0.32362458" vertical-offset="0" max-vertical-offset="927">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="1.8577406" vertical-offset="1684" max-vertical-offset="4080">
+        <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="36" selection-start="143" selection-end="151" vertical-scroll-proportion="-3.4482758" vertical-offset="0" max-vertical-offset="860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="64" selection-start="867" selection-end="867" vertical-scroll-proportion="0.45307443" vertical-offset="0" max-vertical-offset="927">
           <folding />
         </state>
       </provider>

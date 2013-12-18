@@ -2,17 +2,38 @@
 {% load static %}
 {% load i18n %}
 {% block contennt %}
-    <a href="{% url "createpost" %}" class="btn btn-primary">{% trans "Create post" %}</a>
-    {% for post in posts %}
-        <li>
-            <a href="{% url 'post' post.id %}">{{ post }}</a>
-            {% if is_admin or user == post.author %}
+    <a href="{% url "createpost" %}" class="btn btn-primary"><i class="icon-plus-sign"></i> {% trans "Create post" %}
+    </a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{% trans "Author" %}</th>
+            <th>{% trans "Theme" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td>
+                    <a href="{% url "userview" post.author.id %}"><img class="img-circle" width="48px" height="48px"
+                                                                       src="{{ post.author.avatar.url }}"
+                                                                       alt="avatar {{ post.author.username }}"></a>
 
-                <a href="{% url "updatepost" post.id %}" class="btn">{% trans "Change post" %}</a>
-                <a href="{% url "deletepost" post.id %}"
-                   class="btn btn-danger">{% trans "Delete post" %}</a>
-            {% endif %}
-        </li>
+                    <p><a href="{% url "userview" post.author.id %}">{{ post.author.username }}</a></p>
+                </td>
+                <td>
+                    <a href="{% url 'post' post.id %}">{{ post }}</a>
+                </td>
+                <td>
+                    {% if is_admin or user == post.author %}
 
-    {% endfor %}
+                        <a href="{% url "updatepost" post.id %}" class="btn"><i class="icon-edit"></i></a>
+                        <a href="{% url "deletepost" post.id %}"
+                           class="btn btn-danger"><i class="icon-remove"></i></a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

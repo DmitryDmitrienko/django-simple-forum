@@ -8,6 +8,7 @@
             {% trans "Are you sure?" %}
         </div>
         <a href="{% url "post" post.id %}>">{{ post.title }}</a>
+
         <div class="form-actions">
             <input class="btn btn-primary" id="button-accept-change-student" type="submit"
                    value="{% trans "Delete post" %}" name="delete-post">

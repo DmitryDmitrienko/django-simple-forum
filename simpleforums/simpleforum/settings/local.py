@@ -123,10 +123,10 @@ ROOT_URLCONF = 'simpleforum.urls'
 WSGI_APPLICATION = 'simpleforum.wsgi.application'
 
 TEMPLATE_DIRS = (
-# Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-# Always use forward slashes, even on Windows.
-# Don't forget to use absolute paths, not relative paths.
-   "/Users/dmitriydmitrienko/PycharmProjects/django-simple-forum/simpleforums/bootstrapforum/templates",
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    "/Users/dmitriydmitrienko/PycharmProjects/django-simple-forum/simpleforums/bootstrapforum/templates",
 )
 
 FILE_UPLOAD_HANDLERS = (
