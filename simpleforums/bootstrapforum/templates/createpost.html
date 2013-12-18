@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block contennt %}
+<form action="{% url 'createpost' %}" method="post" class="form-horizontal">{% csrf_token %}
+        <legend>{% trans 'Create Post' %}</legend>
+        {% include "input_field.html" with f=form.title %}
+        {% include "input_field.html" with f=form.body %}
+        <div class="form-actions">
+            <input class="btn btn-primary" id="button-accept-change-student" type="submit"
+                             value="{% trans "Create post" %}" name="create-post">
+        </div>
+</form>
+{% endblock %}

@@ -33,7 +33,8 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('post', 'author', 'created', 'pic')
+    list_display = ('post', 'created')
+
 
 User = get_user_model()
 admin.site.register(User, UserAdminForum)

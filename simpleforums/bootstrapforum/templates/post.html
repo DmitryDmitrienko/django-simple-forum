@@ -10,9 +10,9 @@
     <hr>
     {% for comment in post.comments.all %}
         <div class="media">
-            <img class="media-object pull-left img-rounded" height="48" width="48" src="{{ comment.pic.url }}">
             <div class="media-body">
-                <h4 class="media-heading">{{ comment.author }}</h4>
+                <img class="pull-left img-rounded" height="48" width="48" src="{{ comment.author.avatar.url }}">
+                <h4 class="media-heading">{{ comment.author.username }}</h4>
                 <div class="media">
                     {{ comment.body }}
                 </div>

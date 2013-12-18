@@ -48,8 +48,10 @@ class CreateComment(CreateView):
 
 
     def form_valid(self, form):
+        user = self.request.user
         Comment.objects.create(
             post=Post.objects.get(id=self.kwargs['post_id']),
+            author=user,
             **form.cleaned_data
         )
         return HttpResponseRedirect(self.get_success_url())
@@ -106,7 +108,7 @@ class CreateUserView(CreateView):
     def form_valid(self, form):
         u = form.save()
         if u:
-            g = Group.objects.get(name='Users')
+            g = Group.objects.get_or_create(name='Users')
             g.user_set.add(u)
             g.save()
             u.backend = 'django.contrib.auth.backends.ModelBackend'
@@ -124,3 +126,6 @@ class CabinetView(DetailView):
     context_object_name = "user_forum"
 
 
+class CreatePostView(CreateView):
+    template_name = "createpost.html"
+    model = Post

@@ -11,8 +11,6 @@ class UserForum(AbstractUser):
                                verbose_name=_("avatar user"), default='profile/user.png')
 
 
-
-
 class Post(models.Model):
     title = models.CharField(max_length=60, verbose_name=_('title post'), help_text=_('title post'))
     body = models.TextField(verbose_name=_('body post'), help_text=_('body of the post'))
@@ -28,12 +26,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    author = models.ForeignKey(UserForum, verbose_name=_("author post"))
     created = models.DateTimeField(auto_now_add=True)
-    author = models.CharField(max_length=60, verbose_name=_('author comment'), help_text=_('author of the comment'))
     body = models.TextField(verbose_name=_('body comment'), help_text=_('body of the comment'))
     post = models.ForeignKey(Post, related_name='comments')
-    pic = models.ImageField(upload_to='pic/%Y/%m/%d/', verbose_name=_('image author'), help_text=_('image of author'),
-                            blank=False)
 
     def __unicode__(self):
         return u"%s %s" % (self.post, self.body[:60])

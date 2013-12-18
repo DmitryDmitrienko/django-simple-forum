@@ -1,7 +1,6 @@
 #coding=utf-8
 __author__ = 'dmitriydmitrienko'
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
 
 from .models import Post, Comment, UserForum
 
@@ -15,7 +14,7 @@ class PostForm(forms.ModelForm):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        exclude = ('created', 'post')
+        exclude = ('created', 'post', 'author')
         widgets = {
             'body': forms.Textarea(attrs={'class': 'span9'}),
         }
