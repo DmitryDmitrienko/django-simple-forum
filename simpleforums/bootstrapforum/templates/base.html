@@ -11,6 +11,51 @@
             padding-top: 0%;
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajaxSetup({
+                beforeSend: function (xhr, settings) {
+                    function getCookie(name) {
+                        var cookieValue = null;
+                        if (document.cookie && document.cookie != '') {
+                            var cookies = document.cookie.split(';');
+                            for (var i = 0; i < cookies.length; i++) {
+                                var cookie = jQuery.trim(cookies[i]);
+                                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                    break;
+                                }
+                            }
+                        }
+                        return cookieValue;
+                    }
+
+                    if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+                        xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+                    }
+                }
+            });
+            $(".change-language").click(function () {
+                var lang = $(this).val();
+                $.post(
+                        "/setlanguage",
+                        {
+                            'language': lang
+                        },
+                        function (data) {
+                            data = JSON.parse(data);
+                            if (data.success == "success") {
+                                var url = data.url;
+                                $(location).attr('href', url);
+                            }
+                        }
+
+                )
+                ;
+
+            });
+        });
+    </script>
     {% block head %}
         <title>{% block title %}{% trans "Example forum" %}{% endblock %}</title>
     {% endblock %}
@@ -19,23 +64,18 @@
 <div class="container" id="main-conteiter">
     <div class="page-header">
         <h1><a href="/">{% trans "Simple forum" %}</a>
-            <small class="pull-right"> {{ user.username }}
-                <a href="{% url 'logout' %}">{% trans "Exit" %}</a>
+            <small class="pull-right">
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                    <button class="change-language" value="{{ language.code }}">
+                        {{ language.name_local }} ({{ language.code }})
+                    </button>
+                {% endfor %}
+                {{ user.username }}
+                <a href="{% url 'logout' %}">{% trans "exit" %}</a>
             </small>
         </h1>
     </div>
-    <form action="{% url 'language' %}" method="post">{% csrf_token %}
-        <select name="language">
-            {% get_language_info_list for LANGUAGES as languages %}
-            {% for language in languages %}
-                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
-                        selected="selected"{% endif %}>
-                    {{ language.name_local }} ({{ language.code }})
-                </option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="{% trans "Change language" %}"/>
-    </form>
 
     {% block contennt %}
 

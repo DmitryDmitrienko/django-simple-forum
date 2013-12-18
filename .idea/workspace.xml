@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f76351c-cdb4-4623-8261-4c535e76b1f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/jquery.js" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/simpleforum/settings/local.py" afterPath="$PROJECT_DIR$/simpleforums/simpleforum/settings/local.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/models.py" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" afterPath="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/simpleforum/wsgi.py" afterPath="$PROJECT_DIR$/simpleforums/simpleforum/wsgi.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/base.html" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
     </list>
     <ignored path="django-simple-forum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="view.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="view.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
+            <state line="100" column="23" selection-start="3016" selection-end="3016" vertical-scroll-proportion="3.90625" vertical-offset="0" max-vertical-offset="4580">
+              <folding>
+                <element signature="e#15#61#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/settings/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="4" selection-start="1408" selection-end="1414" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="3620">
               <folding />
             </state>
           </provider>
@@ -55,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="64" selection-start="867" selection-end="867" vertical-scroll-proportion="0.45307443" vertical-offset="0" max-vertical-offset="927">
+            <state line="21" column="64" selection-start="867" selection-end="867" vertical-scroll-proportion="-14.4827585" vertical-offset="0" max-vertical-offset="900">
               <folding />
             </state>
           </provider>
@@ -67,16 +67,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="6" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="760">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/post.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="36" selection-start="143" selection-end="151" vertical-scroll-proportion="-3.4482758" vertical-offset="0" max-vertical-offset="860">
+            <state line="3" column="0" selection-start="137" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="820">
               <folding />
             </state>
           </provider>
@@ -94,7 +85,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="77" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="920">
+            <state line="15" column="0" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="920">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -102,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="local.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/settings/local.py">
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="33" selection-start="4179" selection-end="4179" vertical-scroll-proportion="0.0" vertical-offset="2208" max-vertical-offset="3700">
+            <state line="40" column="25" selection-start="1741" selection-end="1741" vertical-scroll-proportion="-27.586206" vertical-offset="0" max-vertical-offset="1820">
               <folding />
             </state>
           </provider>
@@ -129,8 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/base.html" />
-        <option value="$PROJECT_DIR$/simpleforums/simpleforum/settings/local.py" />
         <option value="$PROJECT_DIR$/simpleforums/simpleforum/settings/settings.py" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/user.html" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/admin.py" />
@@ -142,9 +131,11 @@
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/forms.py" />
         <option value="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/updatepost.html" />
-        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" />
+        <option value="$USER_HOME$/Documents/programming/django1.6/lib/python2.7/site-packages/django/views/i18n.py" />
+        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/base.html" />
+        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
       </list>
     </option>
   </component>
@@ -725,17 +716,37 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18463181" sideWeight="0.6707317" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4512195" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18463181" sideWeight="0.5487805" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4512195" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42668024" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -811,77 +822,61 @@
           <line>102</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file:///Library/Python/2.7/site-packages/django/views/i18n.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="50" />
+      <option name="time" value="59" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Documents/programming/django1.6/lib/python2.7/site-packages/django/db/models/manager.py">
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="0" selection-start="9113" selection-end="9113" vertical-scroll-proportion="0.0" vertical-offset="4690" max-vertical-offset="5660" />
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/django/views/generic/detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="6" selection-start="5951" selection-end="5951" vertical-scroll-proportion="0.7280335" vertical-offset="2344" max-vertical-offset="3300">
+        <state line="15" column="14" selection-start="686" selection-end="686" vertical-scroll-proportion="0.32362458" vertical-offset="0" max-vertical-offset="927">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="4" selection-start="433" selection-end="449" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1020">
+        <state line="5" column="36" selection-start="143" selection-end="151" vertical-scroll-proportion="1.2758621" vertical-offset="137" max-vertical-offset="860">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/createpost.html">
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="11" selection-start="67" selection-end="553" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="360">
+        <state line="21" column="64" selection-start="867" selection-end="867" vertical-scroll-proportion="-14.4827585" vertical-offset="0" max-vertical-offset="900">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/authenticate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/django/views/generic/edit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="6" selection-start="6640" selection-end="6640" vertical-scroll-proportion="0.0" vertical-offset="3890" max-vertical-offset="5460">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/settings/local.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="33" selection-start="4179" selection-end="4179" vertical-scroll-proportion="0.0" vertical-offset="2208" max-vertical-offset="3700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="77" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.0" vertical-offset="248" max-vertical-offset="880">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="6" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="760">
+        <state line="3" column="0" selection-start="137" selection-end="185" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="820">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/forms.py">
+    <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/settings/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="6" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+        <state line="44" column="4" selection-start="1408" selection-end="1414" vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="3620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/django/views/i18n.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="4" selection-start="494" selection-end="494" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="5560">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/programming/django1.6/lib/python2.7/site-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="0" selection-start="4900" selection-end="4900" vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="5620">
           <folding />
         </state>
       </provider>
@@ -893,40 +888,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/static/bootstrap/js/jquery.js">
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-22.099682" vertical-offset="20840" max-vertical-offset="187900">
+        <state line="7" column="6" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/programming/django1.6/lib/python2.7/site-packages/django/views/i18n.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.0" vertical-offset="290" max-vertical-offset="5960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleforums/simpleforum/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="130" max-vertical-offset="920">
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html">
+    <entry file="file://$USER_HOME$/Documents/programming/django1.6/lib/python2.7/site-packages/django/views/decorators/http.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="686" selection-end="686" vertical-scroll-proportion="0.32362458" vertical-offset="0" max-vertical-offset="927">
+        <state line="40" column="0" selection-start="1423" selection-end="1423" vertical-scroll-proportion="0.33203125" vertical-offset="490" max-vertical-offset="3300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="256" column="8" selection-start="9489" selection-end="9489" vertical-scroll-proportion="0.0" vertical-offset="4850" max-vertical-offset="8960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="4" selection-start="3451" selection-end="3451" vertical-scroll-proportion="0.0" vertical-offset="2610" max-vertical-offset="7120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="25" selection-start="1741" selection-end="1741" vertical-scroll-proportion="-27.586206" vertical-offset="0" max-vertical-offset="1820">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4080">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="36" selection-start="143" selection-end="151" vertical-scroll-proportion="-3.4482758" vertical-offset="0" max-vertical-offset="860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="64" selection-start="867" selection-end="867" vertical-scroll-proportion="0.45307443" vertical-offset="0" max-vertical-offset="927">
-          <folding />
+        <state line="100" column="23" selection-start="3016" selection-end="3016" vertical-scroll-proportion="3.90625" vertical-offset="0" max-vertical-offset="4580">
+          <folding>
+            <element signature="e#15#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

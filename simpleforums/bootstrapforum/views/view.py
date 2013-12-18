@@ -4,14 +4,16 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, FormView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.views import logout_then_login, auth_login
 from django.shortcuts import redirect
 from django.contrib.auth.models import Group
+from django.views.decorators.http import require_http_methods
 
 from simpleforums.bootstrapforum.models import Post, Comment, UserForum
 from simpleforums.bootstrapforum.forms import CommentForm, PostForm
+from simpleforum.settings.local import LANGUAGES
 
 
 def is_admin(user):
@@ -81,16 +83,28 @@ class CreateComment(CreateView):
         return self.render_to_response(context)
 
 
+@require_http_methods(["POST"])
 def change_language(request):
     from django.views.i18n import set_language
 
     r = request.META.get('HTTP_REFERER')
-    if request.LANGUAGE_CODE == 'ru':
-        r = r.replace('/ru/', '/en/')
-    else:
-        r = r.replace('/en/', '/ru/')
     set_language(request)
-    return HttpResponseRedirect(r)
+    if r:
+        if request.LANGUAGE_CODE == 'ru':
+
+            r = r.replace('/ru/', '/en/')
+        else:
+            r = r.replace('/en/', '/ru/')
+        import json
+
+        return HttpResponse(
+            json.dumps({
+                'success': 'success',
+                'url': r,
+            })
+        )
+    else:
+        return redirect(reverse('index'))
 
 
 class AuthenticateView(FormView):
@@ -131,7 +145,7 @@ class CreateUserView(CreateView):
             auth_login(self.request, u)
             return HttpResponseRedirect(self.get_success_url())
         else:
-            HttpResponseRedirect(reverse('login'))
+            return HttpResponseRedirect(reverse('login'))
 
 
 class CabinetView(DetailView):
