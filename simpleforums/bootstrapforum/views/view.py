@@ -14,6 +14,15 @@ from simpleforums.bootstrapforum.models import Post, Comment, UserForum
 from simpleforums.bootstrapforum.forms import CommentForm, PostForm
 
 
+def is_admin(user):
+    try:
+        group, created = Group.objects.get_or_create(name="Admin")
+        #TODO: придумать что-то получше для определения принадлежности группе
+        return user in group.user_set.all()
+    except Exception:
+        return False
+
+
 class PostListView(ListView):
     template_name = 'index.html'
     http_method_names = ('get', )
@@ -22,14 +31,8 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(PostListView, self).get_context_data(**kwargs)
-        try:
-            group, created = Group.objects.get_or_create(name="Admin")
-            #TODO: придумать что-то получше для определения принадлежности группе
-            is_admin = self.request.user in group.user_set.all()
-        except Exception as e:
-            is_admin = False
         context.update(dict(
-            is_admin=is_admin
+            is_admin=is_admin(self.request.user)
         ))
         return context
 
@@ -171,8 +174,17 @@ class DeletePostView(DeleteView):
     def get_success_url(self):
         return reverse('index')
 
-    def post(self, *args, **kwargs):
-        return super(DeletePostView, self).delete(self.request, *args, **kwargs)
+    def post(self, request, *args, **kwargs):
+        if is_admin(request.user) or request.user == self.get_object().author:
+            return super(DeletePostView, self).delete(self.request, *args, **kwargs)
+        else:
+            return redirect(reverse('index'))
+
+    def get(self, request, *args, **kwargs):
+        if is_admin(request.user) or request.user == self.get_object().author:
+            return super(DeletePostView, self).get(request, *args, **kwargs)
+        else:
+            return redirect(reverse('index'))
 
 
 class UpdatePostView(UpdateView):
@@ -185,4 +197,14 @@ class UpdatePostView(UpdateView):
     def get_success_url(self):
         return reverse("index")
 
+    def post(self, request, *args, **kwargs):
+        if is_admin(request.user) or request.user == self.get_object().author:
+            return super(UpdatePostView, self).post(request, *args, **kwargs)
+        else:
+            return redirect(reverse('index'))
 
+    def get(self, request, *args, **kwargs):
+        if is_admin(request.user) or request.user == self.get_object().author:
+            return super(UpdatePostView, self).get(request, *args, **kwargs)
+        else:
+            return redirect(reverse('index'))

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f76351c-cdb4-4623-8261-4c535e76b1f8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/updatepost.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" afterPath="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" afterPath="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="django-simple-forum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +28,7 @@
       <file leaf-file-name="view.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="182" column="25" selection-start="5262" selection-end="5262" vertical-scroll-proportion="0.6835443" vertical-offset="2988" max-vertical-offset="3660">
+            <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="1.8577406" vertical-offset="1684" max-vertical-offset="4080">
               <folding />
             </state>
           </provider>
@@ -154,8 +149,8 @@
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/deletepost.html" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/index.html" />
         <option value="$PROJECT_DIR$/simpleforums/simpleforum/urls.py" />
-        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
         <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/templates/updatepost.html" />
+        <option value="$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py" />
       </list>
     </option>
   </component>
@@ -715,7 +710,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4512195" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42668024" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -900,7 +895,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/simpleforums/bootstrapforum/views/view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="182" column="25" selection-start="5262" selection-end="5262" vertical-scroll-proportion="0.6835443" vertical-offset="2988" max-vertical-offset="3660">
+        <state line="184" column="39" selection-start="5383" selection-end="5383" vertical-scroll-proportion="1.8577406" vertical-offset="1684" max-vertical-offset="4080">
           <folding />
         </state>
       </provider>
