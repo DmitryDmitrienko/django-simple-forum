@@ -3,20 +3,20 @@
 {% load i18n %}
 {% block contennt %}
     <form class="form-horizontal" action="{% url "createuser" %}" method="post"> {% csrf_token %}
-            {% if form.errors and '__all__' in form.errors %}
-                <ul class="unstyled">
-                    {% for e in form.errors.values %}
-                        <li><p class="text-error">{{ e.as_text }}</p></li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            {% include 'input_field.html' with f=form.username %}
-            {% include 'input_field.html' with f=form.password1 %}
-            {% include 'input_field.html' with f=form.password2 %}
-            <div class="control-group">
-                <div class="controls">
-                    <button type="submit" class="btn btn-primary">{% trans "create user" %}</button>
-                </div>
+        {% if form.errors and '__all__' in form.errors %}
+            <ul class="unstyled">
+                {% for e in form.errors.values %}
+                    <li><p class="text-error">{{ e.as_text }}</p></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% include 'input_field.html' with f=form.username %}
+        {% include 'input_field.html' with f=form.password1 %}
+        {% include 'input_field.html' with f=form.password2 %}
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary">{% trans "create user" %}</button>
             </div>
+        </div>
     </form>
 {% endblock %}

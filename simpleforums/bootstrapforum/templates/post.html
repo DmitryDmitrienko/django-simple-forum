@@ -3,8 +3,12 @@
 {% load i18n %}
 {% block contennt %}
     <div class="well well-small">
-        <p><a href="{% url "userview" user.id %}"><img class="pull-left img-rounded" height="48" width="48" src="{{ user.avatar.url }}"></a></p>
-        <p>{{ post.creates }}<h2>{{ post.title }}</h2></p>
+        <p><a href="{% url "userview" user.id %}"><img class="pull-left img-rounded" height="48" width="48"
+                                                       src="{{ user.avatar.url }}"></a></p>
+
+        <p>
+
+        {{ post.creates }}<h2>{{ post.title }}</h2></p>
         <p>{{ post.body }}</p>
     </div>
     <hr>
@@ -13,20 +17,22 @@
             <div class="media-body">
                 <img class="pull-left img-rounded" height="48" width="48" src="{{ comment.author.avatar.url }}">
                 <h4 class="media-heading">{{ comment.author.username }}</h4>
+
                 <div class="media">
                     {{ comment.body }}
                 </div>
-          </div>
+            </div>
         </div>
     {% endfor %}
-    <form action="{% url 'createcomment' post.id %}" method="post" class="form-horizontal" enctype="multipart/form-data">{% csrf_token %}
+    <form action="{% url 'createcomment' post.id %}" method="post" class="form-horizontal"
+          enctype="multipart/form-data">{% csrf_token %}
         <legend style="margin-top: 3%">{% trans 'Create comment' %}</legend>
         {% include "input_field.html" with f=form.author %}
         {% include "input_field.html" with f=form.body %}
         {% include "input_field.html" with f=form.pic %}
         <div class="form-actions">
             <input class="btn btn-primary" id="button-accept-change-student" type="submit"
-                             value="{% trans "Save change" %}" name="save-comment">
+                   value="{% trans "Save change" %}" name="save-comment">
         </div>
     </form>
 {% endblock %}
