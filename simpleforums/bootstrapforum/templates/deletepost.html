@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block contennt %}
+    <form action="{% url 'deletepost' post.id %}" method="post" class="form-horizontal">{% csrf_token %}
+        <legend>{% trans 'Delete post' %}</legend>
+        <div class="alert alert-error">
+            {% trans "Are you sure?" %}
+        </div>
+        <a href="{% url "post" post.id %}>">{{ post.title }}</a>
+        <div class="form-actions">
+            <input class="btn btn-primary" id="button-accept-change-student" type="submit"
+                   value="{% trans "Delete post" %}" name="delete-post">
+            <a name="cancel" class="btn" href="/">{% trans "Cancel" %}</a>
+        </div>
+    </form>
+{% endblock %}
