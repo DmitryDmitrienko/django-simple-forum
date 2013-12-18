@@ -1,7 +1,7 @@
 #coding=utf-8
 
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, FormView
+from django.views.generic.edit import CreateView, FormView, DeleteView, UpdateView
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -160,4 +160,29 @@ class CreatePostView(CreateView):
             )
             self.object.save()
         return redirect(self.get_success_url())
+
+
+class DeletePostView(DeleteView):
+    template_name = "deletepost.html"
+    model = Post
+    pk_url_kwarg = 'post_id'
+    http_method_names = ("post", "get", "delete")
+
+    def get_success_url(self):
+        return reverse('index')
+
+    def post(self, *args, **kwargs):
+        return super(DeletePostView, self).delete(self.request, *args, **kwargs)
+
+
+class UpdatePostView(UpdateView):
+    template_name = "updatepost.html"
+    model = Post
+    pk_url_kwarg = "post_id"
+    http_method_names = ("post", "get",)
+    form_class = PostForm
+
+    def get_success_url(self):
+        return reverse("index")
+
 

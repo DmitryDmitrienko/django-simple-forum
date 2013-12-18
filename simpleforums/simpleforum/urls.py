@@ -4,7 +4,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.auth.decorators import login_required
-from bootstrapforum.views.view import CreateComment, PostListView, PostView, AuthenticateView, CreateUserView, CabinetView, CreatePostView
+from bootstrapforum.views.view import CreateComment, PostListView, PostView, \
+    AuthenticateView, CreateUserView, CabinetView, CreatePostView, DeletePostView, UpdatePostView
 
 from .settings import local as settings
 
@@ -30,6 +31,8 @@ urlpatterns += i18n_patterns('',
                              url(r'^(?P<post_id>\d+)$', login_required(PostView.as_view()), name='post'),
                              url(r'^user/(?P<user_id>\d+)$', login_required(CabinetView.as_view()), name='userview'),
                              url(r'^createpost$', login_required(CreatePostView.as_view()), name='createpost'),
+                             url(r'^deletepost/(?P<post_id>\d+)', login_required(DeletePostView.as_view()), name='deletepost'),
+                             url(r'^updatepost/(?P<post_id>\d+)', login_required(UpdatePostView.as_view()), name='updatepost'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

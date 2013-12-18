@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block contennt %}
+    <form action="{% url 'updatepost' post.id %}" method="post" class="form-horizontal">{% csrf_token %}
+        <legend>{% trans 'Update post' %}</legend>
+        {% include "input_field.html" with f=form.title %}
+        {% include "input_field.html" with f=form.body %}
+        <div class="form-actions">
+            <input class="btn btn-primary" id="button-accept-change-student" type="submit"
+                   value="{% trans "Save post" %}" name="save-post">
+            <a name="cancel" class="btn" href="/">{% trans "Cancel" %}</a>
+        </div>
+    </form>
+{% endblock %}
