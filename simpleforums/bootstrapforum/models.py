@@ -16,9 +16,7 @@ class Post(models.Model):
     title = models.CharField(max_length=60, verbose_name=_('title post'), help_text=_('title post'))
     body = models.TextField(verbose_name=_('body post'), help_text=_('body of the post'))
     creates = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='posts/image/', blank=True, null=True, verbose_name=_("image post"),
-                              default="posts/image/default.png")
-
+    
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
 

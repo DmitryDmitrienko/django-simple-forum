@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-{% block contennt %}
-    <div class="well well-small">
+{% block content %}
         <p><a href="{% url "userview" user.id %}"><img class="pull-left img-rounded" height="48" width="48"
                                                        src="{{ user.avatar.url }}"></a></p>
 
@@ -14,7 +13,6 @@
                 {{ post.body }}
             {% endautoescape %}
         </p>
-    </div>
     <hr>
     {% for comment in post.comments.all %}
         <div class="media">

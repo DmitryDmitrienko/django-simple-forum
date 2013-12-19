@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
-{% block contennt %}
+{% block content %}
     <form action="{% url 'deletepost' post.id %}" method="post" class="form-horizontal">{% csrf_token %}
         <legend>{% trans 'Delete post' %}</legend>
         <div class="alert alert-error">

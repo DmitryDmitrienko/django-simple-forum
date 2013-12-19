@@ -1,0 +1,26 @@
+{% load i18n %}
+<ul style="margin-top: 5%" class="media-list">
+    <li class="media">
+        <a href="{% url "userview" p.author.id %}"><img class="img-circle" width="48px" height="48px"
+                                                        src="{{ p.author.avatar.url }}"
+                                                        alt="avatar {{ p.author.username }}"></a>
+
+        <div class="media-body">
+            <h4 class="media-heading"><a href="{% url "post" p.id %}">{{ p.title }}</a></h4>
+
+            <div class="media">
+                {% if is_admin or user == p.author %}
+                    <a href="{% url "updatepost" p.id %}" class="btn btn-primary btn-mini"><i
+                            class="icon-edit"></i></a>
+                    <a href="{% url "deletepost" p.id %}" class="btn btn-danger btn-mini"><i
+                            class="icon-remove"></i></a>
+
+
+                {% endif %}
+                {% autoescape off %}
+                    {{ p.body|truncatewords:120 }}
+                {% endautoescape %}
+            </div>
+        </div>
+    </li>
+</ul>
