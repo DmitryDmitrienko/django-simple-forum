@@ -139,8 +139,11 @@ class CreateUserView(CreateView):
         u = form.save()
         if u:
             g, created = Group.objects.get_or_create(name='Users')
-            g.user_set.add(u)
-            g.save()
+            try:
+                g.user_set.add(u)
+                g.save()
+            except Exception as e:
+                print e.message
             u.backend = 'django.contrib.auth.backends.ModelBackend'
             auth_login(self.request, u)
             return HttpResponseRedirect(self.get_success_url())
