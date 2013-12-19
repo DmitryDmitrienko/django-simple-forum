@@ -1,7 +1,7 @@
 # Django settings for simpleforum project.
 import os
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ugettext = lambda s: s
 LOGIN_URL = '/login'
