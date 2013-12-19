@@ -2,17 +2,17 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
-        <p><a href="{% url "userview" user.id %}"><img class="pull-left img-rounded" height="48" width="48"
-                                                       src="{{ user.avatar.url }}"></a></p>
+    <p><a href="{% url "userview" user.id %}"><img class="pull-left img-rounded" height="48" width="48"
+                                                   src="{{ user.avatar.url }}"></a></p>
 
-        <p>
+    <p>
 
-        {{ post.creates }}<h2>{{ post.title }}</h2></p>
-        <p>
-            {% autoescape off %}
-                {{ post.body }}
-            {% endautoescape %}
-        </p>
+    {{ post.creates }}<h2>{{ post.title }}</h2></p>
+    <p>
+        {% autoescape off %}
+            {{ post.body }}
+        {% endautoescape %}
+    </p>
     <hr>
     {% for comment in post.comments.all %}
         <div class="media">
@@ -28,7 +28,7 @@
             </div>
         </div>
     {% endfor %}
-    <form action="{% url 'createcomment' post.id %}" method="post" class="form-horizontal"
+    <form style="margin-top: 10%" action="{% url 'createcomment' post.id %}" method="post" class="form-horizontal"
           enctype="multipart/form-data">{% csrf_token %}
         <legend style="margin-top: 3%">{% trans 'Create comment' %}</legend>
         {% include "input_field.html" with f=form.author %}

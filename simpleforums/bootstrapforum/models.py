@@ -10,13 +10,15 @@ class UserForum(AbstractUser):
     avatar = models.ImageField(upload_to='profile/avatar/%Y/%m/%d/', blank=False, null=True,
                                verbose_name=_("avatar user"), default='profile/user.png')
 
+    about = models.TextField(verbose_name=_("about"))
+
 
 class Post(models.Model):
     author = models.ForeignKey(UserForum, verbose_name=_("author post"))
     title = models.CharField(max_length=60, verbose_name=_('title post'), help_text=_('title post'))
     body = models.TextField(verbose_name=_('body post'), help_text=_('body of the post'))
     creates = models.DateTimeField(auto_now_add=True)
-    
+
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
 

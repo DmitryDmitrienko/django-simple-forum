@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
-    <form class="form-horizontal" action="{% url "createuser" %}" method="post"> {% csrf_token %}
+    <form style="margin-top: 10%" class="form-horizontal center span7" action="{% url "createuser" %}" method="post"> {% csrf_token %}
         {% if form.errors and '__all__' in form.errors %}
             <ul class="unstyled">
                 {% for e in form.errors.values %}

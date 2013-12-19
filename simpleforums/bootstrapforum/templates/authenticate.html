@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block content %}
-    <form class="form-horizontal" action="{% url "login" %}" method="post"> {% csrf_token %}
+    <form style="margin-top: 10%" class="form-horizontal center span7" action="{% url "login" %}" method="post"> {% csrf_token %}
         {% if form.errors and '__all__' in form.errors %}
             <ul class="unstyled">
                 {% for e in form.errors.values %}
@@ -15,8 +15,8 @@
         <div class="control-group">
             <div class="controls">
                 <button type="submit" class="btn btn-primary">{% trans "Enter" %}</button>
+                 <a href="{% url "createuser" %}">{% trans "create new user" %}</a>
             </div>
         </div>
-        <a href="{% url "createuser" %}">{% trans "create new user" %}</a>
     </form>
 {% endblock %}

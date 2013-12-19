@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib.auth.decorators import login_required
 from bootstrapforum.views.view import CreateComment, PostListView, PostView, \
-    AuthenticateView, CreateUserView, CabinetView, CreatePostView, DeletePostView, UpdatePostView
+    AuthenticateView, CreateUserView, CabinetView, CreatePostView, DeletePostView, UpdatePostView, EditUserView
 
 from simpleforums.simpleforum import local as settings
 
@@ -31,6 +31,8 @@ urlpatterns += i18n_patterns('',
                              url(r'^$', login_required(PostListView.as_view()), name='index'),
                              url(r'^(?P<post_id>\d+)$', login_required(PostView.as_view()), name='post'),
                              url(r'^user/(?P<user_id>\d+)$', login_required(CabinetView.as_view()), name='userview'),
+                             url(r'^userupdate/(?P<user_id>\d+)$', login_required(EditUserView.as_view()),
+                                 name='userupdate'),
                              url(r'^createpost$', login_required(CreatePostView.as_view()), name='createpost'),
                              url(r'^deletepost/(?P<post_id>\d+)', login_required(DeletePostView.as_view()),
                                  name='deletepost'),

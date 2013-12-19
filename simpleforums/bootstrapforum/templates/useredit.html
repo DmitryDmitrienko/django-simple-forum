@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+    <form action="{% url 'userupdate' user.id %}" method="post" class="form-horizontal center"
+          enctype="multipart/form-data">{% csrf_token %}
+        <legend style="margin-top: 3%">{% trans 'Update profile' %}</legend>
+        {% include "input_field.html" with f=form.username %}
+        {% include "input_field.html" with f=form.first_name %}
+        {% include "input_field.html" with f=form.last_name %}
+        {% include "input_field.html" with f=form.email %}
+        {% include "input_field.html" with f=form.about %}
+        {% include "input_field.html" with f=form.language %}
+        {% include "input_field.html" with f=form.avatar %}
+        <div class="form-actions">
+            <input class="btn btn-primary" id="button-accept-change-student" type="submit"
+                   value="{% trans "Save" %}" name="save-user">
+            <a href="/" class="btn btn-primary">{% trans "Cancel" %}</a>
+        </div>
+    </form>
+{% endblock %}

@@ -12,6 +12,18 @@
         #main-conteiter {
             padding-top: 0%;
         }
+
+        body {
+            background-color: #fff;
+            background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee .1em, transparent .1em);
+            background-size: 100% 1.2em;
+        }
+
+        .center {
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -63,31 +75,34 @@
     {% endblock %}
 </head>
 <body>
-<div class="container" id="main-conteiter">
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="/">{% trans "Simple blog" %}</a>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="/">{% trans "Simple blog" %}</a>
 
-                <div class="nav-collapse collapse navbar-responsive-collapse">
-                    <ul class="nav pull-right">
-                        {% get_language_info_list for LANGUAGES as languages %}
-                        {% for language in languages %}
-                            <button class="btn btn-link change-language" value="{{ language.code }}">
-                                {{ language.name_local }}
-                            </button>
-                        {% endfor %}
-                        {{ user.username }}&nbsp;<a href="{% url 'logout' %}">{% trans "exit" %}</a>
-                    </ul>
-                </div>
-
+            <div class="nav-collapse collapse navbar-responsive-collapse">
+                <ul class="nav pull-right">
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <button class="btn btn-link change-language" value="{{ language.code }}">
+                            {{ language.name_local }}
+                        </button>
+                    {% endfor %}
+                    {% if user.id != None %}
+                        <a href="{% url "userupdate" user.id %}">{{ user.username }}</a>&nbsp;
+                        <a href="{% url 'logout' %}">{% trans "exit" %}</a>
+                    {% endif %}
+                </ul>
             </div>
+
         </div>
     </div>
-
+</div>
+<div style="margin-top: 5%" class="container" id="main-conteiter">
     {% block content %}
 
     {% endblock %}
+
 </div>
 
 </body>

@@ -5,14 +5,14 @@ from django.views.generic.edit import CreateView, FormView, DeleteView, UpdateVi
 from django.views.generic.detail import DetailView
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import logout_then_login, auth_login
 from django.shortcuts import redirect
 from django.contrib.auth.models import Group
 from django.views.decorators.http import require_http_methods
 
 from simpleforums.bootstrapforum.models import Post, Comment, UserForum
-from simpleforums.bootstrapforum.forms import CommentForm, PostForm, CreateUserForumForm
+from simpleforums.bootstrapforum.forms import CommentForm, PostForm, CreateUserForumForm, UserForumForm
 from simpleforum.local import LANGUAGES
 
 
@@ -223,5 +223,32 @@ class UpdatePostView(UpdateView):
     def get(self, request, *args, **kwargs):
         if is_admin(request.user) or request.user == self.get_object().author:
             return super(UpdatePostView, self).get(request, *args, **kwargs)
+        else:
+            return redirect(reverse('index'))
+
+
+class EditUserView(UpdateView):
+    template_name = "useredit.html"
+    model = UserForum
+    pk_url_kwarg = "user_id"
+    http_method_names = ("get", "post")
+    form_class = UserForumForm
+
+    def get_success_url(self):
+        return reverse("userview", args=(self.object.id, ))
+
+    def post(self, request, *args, **kwargs):
+        if request.user == self.get_object():
+            return super(EditUserView, self).post(request, *args, **kwargs)
+        else:
+            return redirect(reverse('index'))
+
+    def form_valid(self, form):
+        form.cleaned_data['is_active'] = True
+        return super(EditUserView, self).form_valid(form)
+
+    def get(self, request, *args, **kwargs):
+        if request.user == self.get_object():
+            return super(EditUserView, self).get(request, *args, **kwargs)
         else:
             return redirect(reverse('index'))

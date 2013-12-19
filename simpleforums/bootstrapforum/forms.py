@@ -27,6 +27,12 @@ class CommentForm(forms.ModelForm):
 class UserForumForm(forms.ModelForm):
     class Meta:
         model = UserForum
+        exclude = ('date_joined', 'last_login', 'password')
+        widgets = {
+            'about': SummernoteWidget(attrs={
+                'class': 'span9'
+            })
+        }
 
 
 class CreateUserForumForm(forms.ModelForm):
@@ -35,7 +41,7 @@ class CreateUserForumForm(forms.ModelForm):
 
     class Meta:
         model = UserForum
-        fields = ('language', 'username')
+        fields = ('language', 'username', 'about')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
