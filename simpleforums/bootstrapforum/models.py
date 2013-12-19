@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import AbstractUser
-from simpleforum.settings.local import LANGUAGES
+from simpleforum.local import LANGUAGES
 
 
 class UserForum(AbstractUser):

@@ -7,13 +7,14 @@ from django.contrib.auth.decorators import login_required
 from bootstrapforum.views.view import CreateComment, PostListView, PostView, \
     AuthenticateView, CreateUserView, CabinetView, CreatePostView, DeletePostView, UpdatePostView
 
-from .settings import local as settings
+from simpleforums.simpleforum import local as settings
 
 
 admin.autodiscover()
 
 urlpatterns = patterns('',
                        (r'^i18n/', include('django.conf.urls.i18n')),
+                       (r'^summernote/', include('django_summernote.urls')),
                        # Uncomment the admin/doc line below to enable admin documentation:
                        # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        url(r'^setlanguage$', 'bootstrapforum.views.view.change_language', name='language'),

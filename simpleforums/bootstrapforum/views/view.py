@@ -12,8 +12,8 @@ from django.contrib.auth.models import Group
 from django.views.decorators.http import require_http_methods
 
 from simpleforums.bootstrapforum.models import Post, Comment, UserForum
-from simpleforums.bootstrapforum.forms import CommentForm, PostForm
-from simpleforum.settings.local import LANGUAGES
+from simpleforums.bootstrapforum.forms import CommentForm, PostForm, CreateUserForumForm
+from simpleforum.local import LANGUAGES
 
 
 def is_admin(user):
@@ -128,7 +128,7 @@ def logout(request):
 
 
 class CreateUserView(CreateView):
-    form_class = UserCreationForm
+    form_class = CreateUserForumForm
     template_name = "createuser.html"
     http_method_names = ('get', 'post')
 
@@ -138,7 +138,7 @@ class CreateUserView(CreateView):
     def form_valid(self, form):
         u = form.save()
         if u:
-            g = Group.objects.get_or_create(name='Users')
+            g, created = Group.objects.get_or_create(name='Users')
             g.user_set.add(u)
             g.save()
             u.backend = 'django.contrib.auth.backends.ModelBackend'

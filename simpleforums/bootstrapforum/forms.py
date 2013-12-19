@@ -3,12 +3,16 @@ __author__ = 'dmitriydmitrienko'
 from django import forms
 
 from .models import Post, Comment, UserForum
+from django_summernote.widgets import SummernoteWidget
 
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         exclude = ('creates', 'author')
+        widgets = {
+            'body': SummernoteWidget(attrs={'class': 'span9'}),
+        }
 
 
 class CommentForm(forms.ModelForm):
@@ -16,7 +20,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         exclude = ('created', 'post', 'author')
         widgets = {
-            'body': forms.Textarea(attrs={'class': 'span9'}),
+            'body': SummernoteWidget(attrs={'class': 'span9'}),
         }
 
 
@@ -31,7 +35,7 @@ class CreateUserForumForm(forms.ModelForm):
 
     class Meta:
         model = UserForum
-        fields = ('avatar', 'language')
+        fields = ('language', 'username')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")

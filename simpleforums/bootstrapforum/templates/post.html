@@ -9,7 +9,11 @@
         <p>
 
         {{ post.creates }}<h2>{{ post.title }}</h2></p>
-        <p>{{ post.body }}</p>
+        <p>
+            {% autoescape off %}
+                {{ post.body }}
+            {% endautoescape %}
+        </p>
     </div>
     <hr>
     {% for comment in post.comments.all %}
@@ -19,7 +23,9 @@
                 <h4 class="media-heading">{{ comment.author.username }}</h4>
 
                 <div class="media">
-                    {{ comment.body }}
+                    {% autoescape off %}
+                        {{ comment.body }}
+                    {% endautoescape %}
                 </div>
             </div>
         </div>
@@ -32,7 +38,7 @@
         {% include "input_field.html" with f=form.pic %}
         <div class="form-actions">
             <input class="btn btn-primary" id="button-accept-change-student" type="submit"
-                   value="{% trans "Save change" %}" name="save-comment">
+                   value="{% trans "Add comment" %}" name="save-comment">
         </div>
     </form>
 {% endblock %}
