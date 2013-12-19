@@ -64,19 +64,25 @@
 </head>
 <body>
 <div class="container" id="main-conteiter">
-    <div class="page-header">
-        <h1><a href="/">{% trans "Simple forum" %}</a>
-            <small class="pull-right">
-                {% get_language_info_list for LANGUAGES as languages %}
-                {% for language in languages %}
-                    <button class="btn btn-link change-language" value="{{ language.code }}">
-                        {{ language.name_local }} ({{ language.code }})
-                    </button>
-                {% endfor %}
-                {{ user.username }}
-                <a href="{% url 'logout' %}">{% trans "exit" %}</a>
-            </small>
-        </h1>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/">{% trans "Simple blog" %}</a>
+
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav pull-right">
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <button class="btn btn-link change-language" value="{{ language.code }}">
+                                {{ language.name_local }}
+                            </button>
+                        {% endfor %}
+                        {{ user.username }}&nbsp;<a href="{% url 'logout' %}">{% trans "exit" %}</a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     {% block content %}
